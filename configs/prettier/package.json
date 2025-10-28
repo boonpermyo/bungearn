@@ -1,0 +1,24 @@
+{
+  "name": "@whisper-loop/prettier-config",
+  "author": "Boonperm Yo by sdsarun",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "ISC",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./prettier.config.js",
+      "default": "./prettier.config.js",
+      "types": "./@types/prettier.config.d.ts"
+    }
+  },
+  "files": [
+    "prettier.config.mjs"
+  ],
+  "devDependencies": {
+    "prettier": "3.6.2"
+  }
+}

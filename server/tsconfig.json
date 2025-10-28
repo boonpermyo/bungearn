@@ -1,0 +1,8 @@
+{
+  "extends": "@whisper-loop/typescript-config",
+  "compilerOptions": {
+    "module": "nodenext",
+    "moduleResolution": "nodenext"
+  },
+  "include": ["src"]
+}
