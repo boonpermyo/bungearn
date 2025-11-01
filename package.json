@@ -1,0 +1,42 @@
+{
+  "name": "whisper-loop",
+  "author": "Boonperm Yo by sdsarun",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev:web": "npm run build:packages && npm run dev -w @whisper-loop/web",
+    "storybook:web-ui": "npm run storybook -w @whisper-loop/web-ui",
+    "build:core": "npm run build -w @whisper-loop/core --if-present",
+    "build:web-ui": "npm run build -w @whisper-loop/web-ui --if-present",
+    "build:utils": "npm run build -w @whisper-loop/utils --if-present",
+    "build:web": "npm run build -w @whisper-loop/web --if-present",
+    "build:packages": "npm run build:core && npm run build:utils && npm run build:web-ui",
+    "format": "npm run format --ws --if-present",
+    "format:web": "npm run format -w @whisper-loop/web --if-present",
+    "format:web-ui": "npm run format -w @whisper-loop/web-ui --if-present",
+    "format:core": "npm run format -w @whisper-loop/core --if-present",
+    "format:utils": "npm run format -w @whisper-loop/utils --if-present",
+    "format:server": "npm run format -w @whisper-loop/server --if-present",
+    "test": "npm run test -ws --if-present"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/boonpermyo/whisper-loop.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/boonpermyo/whisper-loop/issues"
+  },
+  "homepage": "https://github.com/boonpermyo/whisper-loop#readme",
+  "workspaces": [
+    "apps/**",
+    "packages/**",
+    "configs/**",
+    "server"
+  ],
+  "devDependencies": {
+    "@types/node": "^20",
+    "@whisper-loop/eslint-config": "^1.0.0",
+    "typescript": "^5"
+  }
+}

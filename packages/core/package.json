@@ -1,0 +1,28 @@
+{
+  "name": "@whisper-loop/core",
+  "author": "Boonperm Yo by sdsarun",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "rimraf dist && tsc -p tsconfig.build.json",
+    "format": "prettier --write .",
+    "test": "echo \"Error: no test specified\""
+  },
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "devDependencies": {
+    "rimraf": "^6.0.1"
+  }
+}
