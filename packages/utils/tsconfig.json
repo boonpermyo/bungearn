@@ -1,7 +1,6 @@
 {
   "extends": "@whisper-loop/typescript-config",
-  "compilerOptions": {
-    "moduleResolution": "bundler"
-  },
-  "include": ["src"]
+  "include": [
+    "src"
+  ]
 }
