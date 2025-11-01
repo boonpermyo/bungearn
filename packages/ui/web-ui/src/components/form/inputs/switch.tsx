@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import React from "react";
-import { Switch as AntdSwitch } from "antd";
-import { type ControllerRenderProps } from "react-hook-form";
-import useFormField from "../fields/use-form-field";
+import React from 'react';
+import { Switch as AntdSwitch } from 'antd';
+import { type ControllerRenderProps } from 'react-hook-form';
+import useFormField from '../fields/use-form-field';
 
 export type SwitchInputProps = React.ComponentPropsWithRef<typeof AntdSwitch> & {
   controlField?: ControllerRenderProps<any, any>;

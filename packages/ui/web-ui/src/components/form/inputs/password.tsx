@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { Input } from "antd"
-import useFormField from "../fields/use-form-field";
-import { type ControllerRenderProps } from "react-hook-form";
+import { Input } from 'antd';
+import useFormField from '../fields/use-form-field';
+import { type ControllerRenderProps } from 'react-hook-form';
 
 const { Password: AntdPassword } = Input;
 
@@ -28,7 +28,7 @@ export default function PasswordInput({
     <AntdPassword
       id={id ?? formItemId}
       name={name ?? controlField?.name}
-      status={status ?? invalid ? "error" : undefined}
+      status={(status ?? invalid) ? 'error' : undefined}
       ref={ref ?? controlField?.ref}
       onChange={onChange ?? controlField?.onChange}
       onBlur={onBlur ?? controlField?.onBlur}

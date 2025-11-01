@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { use } from "react";
-import { useFormContext, type UseFormGetFieldState } from "react-hook-form";
-import { FormFieldContext } from "./form-field";
-import { FormItemContext } from "./form-item";
+import { use } from 'react';
+import { useFormContext, type UseFormGetFieldState } from 'react-hook-form';
+import { FormFieldContext } from './form-field';
+import { FormItemContext } from './form-item';
 
 export type UseFormFieldOptions = {
   skipValidationIfNoContext?: boolean;
@@ -40,18 +40,18 @@ export default function useFormField(options?: UseFormFieldOptions): UseFormFiel
 
   if (!formFieldName) {
     throw new Error(
-      "useFormField must be used inside a <FormField> component. Ensure that <FormField> wraps the component using useFormField."
+      'useFormField must be used inside a <FormField> component. Ensure that <FormField> wraps the component using useFormField.'
     );
   }
 
   if (!formItemId) {
     throw new Error(
-      "useFormField must be used inside a <FormItem> component. Ensure that <FormItem> wraps the component using useFormField."
+      'useFormField must be used inside a <FormItem> component. Ensure that <FormItem> wraps the component using useFormField.'
     );
   }
 
   if (!formContext) {
-    throw new Error("useFormField must be used inside a <Form> component.");
+    throw new Error('useFormField must be used inside a <Form> component.');
   }
 
   const fieldState = formContext?.getFieldState?.(formFieldName, formContext?.formState);

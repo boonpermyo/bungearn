@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { Input } from "antd"
-import { type ControllerRenderProps } from "react-hook-form";
-import useFormField from "../fields/use-form-field";
+import { Input } from 'antd';
+import { type ControllerRenderProps } from 'react-hook-form';
+import useFormField from '../fields/use-form-field';
 
 const { TextArea: AntdTextArea } = Input;
 
@@ -28,7 +28,7 @@ export default function TextAreaInput({
     <AntdTextArea
       id={id ?? formItemId}
       name={name ?? controlField?.name}
-      status={status ?? invalid ? "error" : undefined}
+      status={(status ?? invalid) ? 'error' : undefined}
       ref={ref ?? controlField?.ref}
       onChange={onChange ?? controlField?.onChange}
       onBlur={onBlur ?? controlField?.onBlur}

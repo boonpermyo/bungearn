@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import React from "react";
-import { Checkbox } from "antd";
-import { type ControllerRenderProps } from "react-hook-form";
-import useFormField from "../fields/use-form-field";
+import React from 'react';
+import { Checkbox } from 'antd';
+import { type ControllerRenderProps } from 'react-hook-form';
+import useFormField from '../fields/use-form-field';
 
 const { Group: AntdCheckboxGroup } = Checkbox;
 
@@ -26,7 +26,7 @@ export default function CheckboxGroupInput({
 
   return (
     <div
-      id={(id ?? formItemId)?.concat("-checkbox-group-container")}
+      id={(id ?? formItemId)?.concat('-checkbox-group-container')}
       ref={controlField?.ref}
       onBlur={controlField?.onBlur}
       tabIndex={0}

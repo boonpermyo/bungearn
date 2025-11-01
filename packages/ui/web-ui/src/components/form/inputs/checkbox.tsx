@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import React from "react";
-import { Checkbox as AntdCheckbox } from "antd";
-import { type ControllerRenderProps } from "react-hook-form";
-import useFormField from "../fields/use-form-field";
+import React from 'react';
+import { Checkbox as AntdCheckbox } from 'antd';
+import { type ControllerRenderProps } from 'react-hook-form';
+import useFormField from '../fields/use-form-field';
 
 export type CheckboxInputProps = React.ComponentPropsWithRef<typeof AntdCheckbox> & {
   controlField?: ControllerRenderProps<any, any>;

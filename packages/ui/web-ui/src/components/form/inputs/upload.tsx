@@ -1,18 +1,18 @@
-"use client";
+'use client';
 
-import React from "react";
-import { Upload as AntdUpload } from "antd";
-import { type ControllerRenderProps } from "react-hook-form";
-import useFormField from "../fields/use-form-field";
+import React from 'react';
+import { Upload as AntdUpload } from 'antd';
+import { type ControllerRenderProps } from 'react-hook-form';
+import useFormField from '../fields/use-form-field';
 
 export type UploadInputProps = React.ComponentPropsWithRef<typeof AntdUpload> & {
   controlField?: ControllerRenderProps<any, any>;
-  uploadMode?: "instant" | "manual";
+  uploadMode?: 'instant' | 'manual';
 };
 
 export default function UploadInput({
   id,
-  uploadMode = "manual",
+  uploadMode = 'manual',
   controlField,
   beforeUpload,
   disabled,
@@ -22,8 +22,8 @@ export default function UploadInput({
 }: UploadInputProps) {
   const { invalid, formItemId } = useFormField({ skipValidationIfNoContext: true });
 
-  const _beforeUpload: UploadInputProps["beforeUpload"] = (file, fileList) => {
-    if (typeof beforeUpload === "function" || uploadMode === "instant") {
+  const _beforeUpload: UploadInputProps['beforeUpload'] = (file, fileList) => {
+    if (typeof beforeUpload === 'function' || uploadMode === 'instant') {
       return beforeUpload?.(file, fileList);
     }
 
@@ -33,7 +33,7 @@ export default function UploadInput({
 
   return (
     <div
-      id={(id ?? formItemId)?.concat("-upload-container")}
+      id={(id ?? formItemId)?.concat('-upload-container')}
       ref={controlField?.ref}
       onBlur={controlField?.onBlur}
       tabIndex={0}

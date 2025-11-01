@@ -1,20 +1,20 @@
-"use client";
+'use client';
 
-import React from "react";
-import { Upload as AntdUpload } from "antd";
-import { type ControllerRenderProps } from "react-hook-form";
-import useFormField from "../fields/use-form-field";
+import React from 'react';
+import { Upload as AntdUpload } from 'antd';
+import { type ControllerRenderProps } from 'react-hook-form';
+import useFormField from '../fields/use-form-field';
 
 const { Dragger: AntdDraggerUpload } = AntdUpload;
 
 export type DraggerUploadInputProps = React.ComponentPropsWithRef<typeof AntdDraggerUpload> & {
   controlField?: ControllerRenderProps<any, any>;
-  uploadMode?: "instant" | "manual";
+  uploadMode?: 'instant' | 'manual';
 };
 
 export default function DraggerUploadInput({
   id,
-  uploadMode = "manual",
+  uploadMode = 'manual',
   controlField,
   beforeUpload,
   disabled,
@@ -24,8 +24,8 @@ export default function DraggerUploadInput({
 }: DraggerUploadInputProps) {
   const { invalid, formItemId } = useFormField({ skipValidationIfNoContext: true });
 
-  const _beforeUpload: DraggerUploadInputProps["beforeUpload"] = (file, fileList) => {
-    if (typeof beforeUpload === "function" || uploadMode === "instant") {
+  const _beforeUpload: DraggerUploadInputProps['beforeUpload'] = (file, fileList) => {
+    if (typeof beforeUpload === 'function' || uploadMode === 'instant') {
       return beforeUpload?.(file, fileList);
     }
 
@@ -35,7 +35,7 @@ export default function DraggerUploadInput({
 
   return (
     <div
-      id={(id ?? formItemId)?.concat("-upload-container")}
+      id={(id ?? formItemId)?.concat('-upload-container')}
       ref={controlField?.ref}
       onBlur={controlField?.onBlur}
       tabIndex={0}
