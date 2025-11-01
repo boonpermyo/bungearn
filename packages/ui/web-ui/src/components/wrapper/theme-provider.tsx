@@ -2,9 +2,9 @@
 
 import {
   ThemeProvider as NextThemesProvider,
-  ThemeProviderProps as NextThemesProviderProps,
+  type ThemeProviderProps as NextThemesProviderProps,
   useTheme as nextThemesUseTheme,
-  UseThemeProps as NextThemesUseThemeProps
+  type UseThemeProps as NextThemesUseThemeProps
 } from 'next-themes';
 
 export type ThemeProviderProps = NextThemesProviderProps;

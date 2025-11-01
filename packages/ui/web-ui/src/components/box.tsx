@@ -28,7 +28,7 @@ export default function Box({
     <div
       className={cn(mapVariantBox[variant ?? 'page-content'], className)}
       style={{
-        backgroundColor: token.colorBgContainer,
+        backgroundColor: disabledThemeSync ? undefined : token.colorBgContainer,
         ...style
       }}
       {...props}

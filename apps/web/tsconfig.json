@@ -1,7 +1,11 @@
 {
-  "extends": "@whisper-loop/typescript-config/base",
   "compilerOptions": {
-    "lib": ["DOM", "DOM.Iterable", "ES2022"],
+    "target": "ES2017",
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ES2022"
+    ],
     "allowJs": true,
     "noEmit": true,
     "esModuleInterop": true,
@@ -14,8 +18,15 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
-    }
+      "@/*": [
+        "./*"
+      ]
+    },
+    "skipLibCheck": true,
+    "strict": false,
+    "module": "esnext",
+    "resolveJsonModule": true,
+    "isolatedModules": true
   },
   "include": [
     "next-env.d.ts",
@@ -25,5 +36,7 @@
     ".next/dev/types/**/*.ts",
     "**/*.mts"
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules"
+  ]
 }

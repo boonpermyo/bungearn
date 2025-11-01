@@ -1,4 +1,4 @@
-"use client"
+'use client';
 
 import dayjs, { Dayjs } from 'dayjs';
 import dayjsGenerateConfig from 'rc-picker/lib/generate/dayjs';
@@ -26,8 +26,8 @@ dayjs.locale(
       L: 'DD/MM/BBBB',
       LL: 'D MMMM BBBB',
       LLL: 'D MMMM BBBB เวลา H:mm',
-      LLLL: 'วันddddที่ D MMMM BBBB เวลา H:mm',
-    },
+      LLLL: 'วันddddที่ D MMMM BBBB เวลา H:mm'
+    }
   },
   undefined,
   true
@@ -48,7 +48,7 @@ const localeMap: IlocaleMapObject = {
   th_TH: 'th',
   zh_CN: 'zh-cn',
   zh_HK: 'zh-hk',
-  zh_TW: 'zh-tw',
+  zh_TW: 'zh-tw'
 };
 
 const parseLocale = (locale: string): string => {
@@ -56,10 +56,7 @@ const parseLocale = (locale: string): string => {
 };
 
 const parseNoMatchNotice = (): void => {
-  noteOnce(
-    false,
-    'Not match any format. Please help to fire an issue about this.'
-  );
+  noteOnce(false, 'Not match any format. Please help to fire an issue about this.');
 };
 
 const config = {
@@ -72,8 +69,7 @@ const config = {
       dayjs().locale(parseLocale(locale)).localeData().firstDayOfWeek(),
     getWeekFirstDate: (locale: string, date: Dayjs): Dayjs =>
       date.locale(parseLocale(locale)).isoWeekday(1),
-    getWeek: (locale: string, date: Dayjs): number =>
-      date.locale(parseLocale(locale)).week(),
+    getWeek: (locale: string, date: Dayjs): number => date.locale(parseLocale(locale)).week(),
     getShortWeekDays: (locale: string): string[] =>
       dayjs().locale(parseLocale(locale)).localeData().weekdaysMin(),
     getShortMonths: (locale: string): string[] =>
@@ -109,8 +105,8 @@ const config = {
         parseNoMatchNotice();
       }
       return null;
-    },
-  },
+    }
+  }
 };
 
 const DatePickerTH = generatePicker<Dayjs>(config);

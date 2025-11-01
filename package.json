@@ -26,9 +26,9 @@
   },
   "homepage": "https://github.com/boonpermyo/whisper-loop#readme",
   "workspaces": [
-    "apps/*",
-    "packages/*",
-    "configs/*",
+    "apps/**",
+    "packages/**",
+    "configs/**",
     "server"
   ],
   "devDependencies": {

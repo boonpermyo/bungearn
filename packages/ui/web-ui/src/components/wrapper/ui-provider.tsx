@@ -1,5 +1,7 @@
 'use client';
 
+import '@ant-design/v5-patch-for-react-19';
+
 import {
   App as AntdFeedback,
   ConfigProvider as AntdConfigProvider,
@@ -28,8 +30,7 @@ function UIProviderCompose({
   feedbakcConfig,
   themeContext
 }: UIProviderComposeProps) {
-  const {} = themeContext;
-
+  console.log('[LOG] - ui-provider.tsx:31 - UIProviderCompose - themeContext:', themeContext);
   const content = (
     <ThemeProvider>
       <AntdConfigProvider wave={{ disabled: true }} theme={{ components: { ...componentThemeConfig } }}>

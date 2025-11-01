@@ -1,4 +1,4 @@
-import { Button as AntdButton, ButtonProps as AntdButtonProps } from 'antd';
+import { Button as AntdButton, type ButtonProps as AntdButtonProps } from 'antd';
 
 export type ButtonProps = AntdButtonProps;
 

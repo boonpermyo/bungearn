@@ -1,0 +1,8 @@
+{
+  "extends": "@whisper-loop/typescript-config",
+  "include": [
+    "src",
+    ".storybook/*",
+    "vitest.config.ts",
+  ]
+}

@@ -1,7 +1,12 @@
 'use client';
 
 import React from 'react';
-import { FieldValues, FormProvider, FormProviderProps, UseFormHandleSubmit } from 'react-hook-form';
+import {
+  type FieldValues,
+  FormProvider,
+  type FormProviderProps,
+  type UseFormHandleSubmit
+} from 'react-hook-form';
 
 export type FormProps<
   TFieldValues extends FieldValues = FieldValues,

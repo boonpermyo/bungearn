@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import { Input, type InputProps } from "antd";
-import { ControllerRenderProps } from "react-hook-form";
-import { NumericFormat, type NumberFormatValues, type NumericFormatProps } from "react-number-format";
-import useFormField from "../fields/use-form-field";
+import { Input, type InputProps } from 'antd';
+import { type ControllerRenderProps } from 'react-hook-form';
+import { NumericFormat, type NumberFormatValues, type NumericFormatProps } from 'react-number-format';
+import useFormField from '../fields/use-form-field';
 
 export type NumericInputProps = NumericFormatProps & {
-  customInputProps?: Pick<InputProps, "addonAfter" | "addonBefore" | "allowClear" | "size" | "status">;
+  customInputProps?: Pick<InputProps, 'addonAfter' | 'addonBefore' | 'allowClear' | 'size' | 'status'>;
   controlField?: ControllerRenderProps<any, any>;
   valueChangeFieldKeyForControl?: keyof NumberFormatValues;
 };
@@ -17,7 +17,7 @@ export default function NumericInput({
   controlField,
   customInput,
   customInputProps,
-  valueChangeFieldKeyForControl = "floatValue",
+  valueChangeFieldKeyForControl = 'floatValue',
   disabled,
   value,
   onBlur,
@@ -27,12 +27,12 @@ export default function NumericInput({
   const InputComponent: React.ComponentType<any> = customInput ?? Input;
   const { invalid, formItemId } = useFormField({ skipValidationIfNoContext: true });
 
-  const _onValueChange: NumericInputProps["onValueChange"] = (values, sourceInfo) => {
-    if (typeof onValueChange === "function") {
+  const _onValueChange: NumericInputProps['onValueChange'] = (values, sourceInfo) => {
+    if (typeof onValueChange === 'function') {
       return onValueChange(values, sourceInfo);
     }
 
-    if (typeof controlField?.onChange === "function") {
+    if (typeof controlField?.onChange === 'function') {
       controlField?.onChange(values[valueChangeFieldKeyForControl]);
     }
   };
@@ -41,7 +41,7 @@ export default function NumericInput({
     <NumericFormat
       customInput={InputComponent}
       id={id ?? formItemId}
-      status={customInputProps?.status ?? invalid ? "error" : undefined}
+      status={(customInputProps?.status ?? invalid) ? 'error' : undefined}
       getInputRef={getInputRef ?? controlField?.ref}
       onValueChange={_onValueChange}
       onBlur={onBlur ?? controlField?.onBlur}
