@@ -1,4 +1,4 @@
-import { Entity } from "../base/base-entity";
+import { Entity } from '../base/base-entity';
 
 export type MessageAttributes = {
   id: string;
@@ -13,10 +13,10 @@ export type MessageAttributes = {
 export class Message extends Entity<MessageAttributes> {
   protected getDefaultAttributes(): MessageAttributes {
     return {
-      id: "",
-      senderId: "",
-      conversationId: "",
-      content: "",
+      id: '',
+      senderId: '',
+      conversationId: '',
+      content: '',
       sentAt: new Date(0),
       updatedAt: new Date(0),
       deletedAt: null

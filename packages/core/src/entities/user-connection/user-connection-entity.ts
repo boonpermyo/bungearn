@@ -1,4 +1,4 @@
-import { Entity } from "../base/base-entity";
+import { Entity } from '../base/base-entity';
 
 export type UserConnectionAttributes = {
   id: string;
@@ -12,9 +12,9 @@ export type UserConnectionAttributes = {
 export class UserConnection extends Entity<UserConnectionAttributes> {
   protected getDefaultAttributes(): UserConnectionAttributes {
     return {
-      id: "",
-      requesterId: "",
-      addresseeId: "",
+      id: '',
+      requesterId: '',
+      addresseeId: '',
       isAccept: false,
       requestedAt: new Date(0),
       acceptedAt: null

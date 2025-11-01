@@ -1,4 +1,4 @@
-import { Entity } from "../base/base-entity";
+import { Entity } from '../base/base-entity';
 
 export type UserGenderAttributes = {
   id: string;
@@ -8,8 +8,8 @@ export type UserGenderAttributes = {
 export class UserGender extends Entity<UserGenderAttributes> {
   protected getDefaultAttributes(): UserGenderAttributes {
     return {
-      id: "",
-      name: ""
+      id: '',
+      name: ''
     };
   }
 }

@@ -1,4 +1,4 @@
-import { Entity } from "../base/base-entity";
+import { Entity } from '../base/base-entity';
 
 export type UserAttributes = {
   id: string;
@@ -15,11 +15,11 @@ export type UserAttributes = {
 export class User extends Entity<UserAttributes> {
   protected getDefaultAttributes(): UserAttributes {
     return {
-      id: "",
-      username: "",
+      id: '',
+      username: '',
       aka: null,
-      userRoleId: "",
-      userGenderId: "",
+      userRoleId: '',
+      userGenderId: '',
       createdAt: new Date(0),
       updatedAt: new Date(0),
       deletedAt: null,

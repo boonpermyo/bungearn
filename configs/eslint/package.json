@@ -3,12 +3,24 @@
   "author": "Boonperm Yo by sdsarun",
   "private": true,
   "version": "1.0.0",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./eslint-config.js",
+      "default": "./eslint-config.js",
+      "types": "./@types/eslint-config.d.ts"
+    }
   },
-  "license": "ISC",
-  "type": "commonjs",
+  "files": [
+    "eslint-config.mjs"
+  ],
   "devDependencies": {
-    "eslint": "^9"
+    "@eslint/js": "^9.39.0",
+    "eslint": "^9.39.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "eslint-plugin-react": "^7.37.5",
+    "globals": "^14.0.0",
+    "typescript-eslint": "^8.46.2"
   }
 }

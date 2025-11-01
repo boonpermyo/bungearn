@@ -29,12 +29,11 @@
     "apps/*",
     "packages/*",
     "configs/*",
-    "server",
-    "packages/ui/web-ui"
+    "server"
   ],
   "devDependencies": {
     "@types/node": "^20",
-    "@whisper-loop/prettier-config": "^1.0.0",
+    "@whisper-loop/eslint-config": "^1.0.0",
     "typescript": "^5"
   }
 }

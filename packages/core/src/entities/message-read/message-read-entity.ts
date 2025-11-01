@@ -1,4 +1,4 @@
-import { Entity } from "../base/base-entity";
+import { Entity } from '../base/base-entity';
 
 export type MessageReadAttributes = {
   id: string;
@@ -10,9 +10,9 @@ export type MessageReadAttributes = {
 export class MessageRead extends Entity<MessageReadAttributes> {
   protected getDefaultAttributes(): MessageReadAttributes {
     return {
-      id: "",
-      messageId: "",
-      userId: "",
+      id: '',
+      messageId: '',
+      userId: '',
       readAt: new Date(0)
     };
   }

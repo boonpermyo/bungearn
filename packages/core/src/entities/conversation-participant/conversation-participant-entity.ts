@@ -1,4 +1,4 @@
-import { Entity } from "../base/base-entity";
+import { Entity } from '../base/base-entity';
 
 export type ConversationParticipantAttributes = {
   id: string;
@@ -11,9 +11,9 @@ export type ConversationParticipantAttributes = {
 export class ConversationParticipant extends Entity<ConversationParticipantAttributes> {
   protected getDefaultAttributes(): ConversationParticipantAttributes {
     return {
-      id: "",
-      conversationId: "",
-      userId: "",
+      id: '',
+      conversationId: '',
+      userId: '',
       joinedAt: new Date(0),
       leftAt: null
     };

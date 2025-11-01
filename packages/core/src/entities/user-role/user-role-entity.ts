@@ -1,6 +1,6 @@
-import { Entity } from "../base/base-entity";
+import { Entity } from '../base/base-entity';
 
-export type UserRoleName = "REGISTERED" | "GUEST" | "SUPER_ADMIN" | "ADMIN" | "ROOT";
+export type UserRoleName = 'REGISTERED' | 'GUEST' | 'SUPER_ADMIN' | 'ADMIN' | 'ROOT';
 
 export type UserRoleAttributes = {
   id: string;
@@ -10,8 +10,8 @@ export type UserRoleAttributes = {
 export class UserRole extends Entity<UserRoleAttributes> {
   protected getDefaultAttributes(): UserRoleAttributes {
     return {
-      id: "",
-      name: "GUEST"
+      id: '',
+      name: 'GUEST'
     };
   }
 }
