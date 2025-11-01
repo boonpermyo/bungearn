@@ -13,7 +13,24 @@ export const Button: Story = {
   render: () => {
     return (
       <div>
-        <ButtonComponent>Sample</ButtonComponent>
+        <ButtonComponent color="primary" variant="solid">
+          Solid
+        </ButtonComponent>
+        <ButtonComponent color="default" variant="outlined">
+          Outlined
+        </ButtonComponent>
+        <ButtonComponent color="default" variant="dashed">
+          Dashed
+        </ButtonComponent>
+        <ButtonComponent color="default" variant="filled">
+          Filled
+        </ButtonComponent>
+        <ButtonComponent color="default" variant="text">
+          Text
+        </ButtonComponent>
+        <ButtonComponent color="default" variant="link">
+          Link
+        </ButtonComponent>
       </div>
     );
   }

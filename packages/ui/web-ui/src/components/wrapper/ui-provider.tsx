@@ -5,48 +5,77 @@ import '@ant-design/v5-patch-for-react-19';
 import {
   App as AntdFeedback,
   ConfigProvider as AntdConfigProvider,
-  type ThemeConfig as AntdThemeConfig,
-  type AppProps as AntdAppProps
+  theme as AntdTheme,
+  type AppProps as AntdAppProps,
+  type ThemeConfig as AntdThemeConfig
 } from 'antd';
 import { AntdRegistry } from '@ant-design/nextjs-registry';
-import ThemeProvider, { useTheme, type UseThemeResult } from './theme-provider';
+import ThemeProvider, { useTheme, type ThemeProviderProps } from './theme-provider';
 
 export type UIComponentThemeConfig = AntdThemeConfig['components'];
+export type UIComponentGlobalConfig = AntdThemeConfig['token'];
 export type FeedbackConfig = AntdAppProps;
-export type UIProviderProps = React.PropsWithChildren<{
+
+type UIProviderBaseProps = React.PropsWithChildren<{
   framework?: 'nextjs';
+  globalTokenConfig?: UIComponentGlobalConfig;
   componentThemeConfig?: UIComponentThemeConfig;
   feedbakcConfig?: FeedbackConfig;
 }>;
 
-type UIProviderComposeProps = UIProviderProps & {
-  themeContext: UseThemeResult;
+type ThemeProviderOptions = Omit<ThemeProviderProps, 'children'>;
+
+export type UIProviderProps = UIProviderBaseProps & {
+  themeProviderProps?: ThemeProviderOptions;
 };
 
-function UIProviderCompose({
+function UIProviderBody({
   children,
   framework = 'nextjs',
+  globalTokenConfig,
   componentThemeConfig,
-  feedbakcConfig,
-  themeContext
-}: UIProviderComposeProps) {
-  console.log('[LOG] - ui-provider.tsx:31 - UIProviderCompose - themeContext:', themeContext);
+  feedbakcConfig
+}: UIProviderBaseProps) {
+  const { theme, resolvedTheme } = useTheme();
+  const activeTheme = (theme === 'system' ? resolvedTheme : theme) ?? 'light';
   const content = (
-    <ThemeProvider>
-      <AntdConfigProvider wave={{ disabled: true }} theme={{ components: { ...componentThemeConfig } }}>
-        <AntdFeedback {...feedbakcConfig}>{children}</AntdFeedback>
-      </AntdConfigProvider>
-    </ThemeProvider>
+    <AntdConfigProvider
+      wave={{ disabled: false }}
+      theme={{
+        token: { ...globalTokenConfig },
+        components: { ...componentThemeConfig },
+        algorithm: activeTheme === 'dark' ? AntdTheme.darkAlgorithm : AntdTheme.defaultAlgorithm
+      }}
+    >
+      <AntdFeedback {...feedbakcConfig}>{children}</AntdFeedback>
+    </AntdConfigProvider>
   );
 
-  if (framework === 'nextjs') {
-    return <AntdRegistry>{content}</AntdRegistry>;
-  }
-
-  return content;
+  return framework === 'nextjs' ? <AntdRegistry>{content}</AntdRegistry> : content;
 }
 
-export default function UIProvider({ ...props }: UIProviderProps) {
-  const themeContext = useTheme();
-  return <UIProviderCompose {...props} themeContext={themeContext} />;
+function UIProviderCompose({ themeProviderProps, ...props }: UIProviderProps) {
+  const {
+    defaultTheme = 'light',
+    attribute = 'class',
+    disableTransitionOnChange = true,
+    ...restThemeProviderProps
+  } = themeProviderProps ?? {};
+
+  return (
+    <ThemeProvider
+      defaultTheme={defaultTheme}
+      attribute={attribute}
+      disableTransitionOnChange={disableTransitionOnChange}
+      {...restThemeProviderProps}
+    >
+      <UIProviderBody {...props} />
+    </ThemeProvider>
+  );
+}
+
+export const useFeeback = AntdFeedback.useApp;
+
+export default function UIProvider(props: UIProviderProps) {
+  return <UIProviderCompose {...props} />;
 }
