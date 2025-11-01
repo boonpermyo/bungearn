@@ -11,6 +11,7 @@
     "build:web-ui": "npm run build -w @whisper-loop/web-ui --if-present",
     "build:utils": "npm run build -w @whisper-loop/utils --if-present",
     "build:packages": "npm run build:core && npm run build:utils && npm run build:web-ui",
+    "start:web": "npm run start -w @whisper-loop/web --if-present",
     "format": "npm run format --ws --if-present",
     "format:web": "npm run format -w @whisper-loop/web --if-present",
     "format:web-ui": "npm run format -w @whisper-loop/web-ui --if-present",
