@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev:web": "npm run build:packages && npm run dev -w @whisper-loop/web",
+    "storybook:web-ui": "npm run storybook -w @whisper-loop/web-ui",
     "build:core": "npm run build -w @whisper-loop/core --if-present",
     "build:web-ui": "npm run build -w @whisper-loop/web-ui --if-present",
     "build:utils": "npm run build -w @whisper-loop/utils --if-present",

@@ -1,4 +1,6 @@
 export * from './wrapper/ui-provider';
+export * from './wrapper/theme-provider';
+export * from './wrapper/loading-fullscreen-provider';
 export { default as UIProvider } from './wrapper/ui-provider';
 
 export * from './form/form';
@@ -78,3 +80,6 @@ export { default as DatePickerTH } from './date-picker-th';
 
 export * from './modal';
 export { default as Modal } from './modal';
+
+export * from './loading';
+export { default as Loading } from './loading';

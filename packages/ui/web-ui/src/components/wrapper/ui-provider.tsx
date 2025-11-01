@@ -1,7 +1,8 @@
 'use client';
 
-import '@ant-design/v5-patch-for-react-19';
+// import '@ant-design/v5-patch-for-react-19';
 
+import type React from 'react';
 import {
   App as AntdFeedback,
   ConfigProvider as AntdConfigProvider,
@@ -10,7 +11,9 @@ import {
   type ThemeConfig as AntdThemeConfig
 } from 'antd';
 import { AntdRegistry } from '@ant-design/nextjs-registry';
-import ThemeProvider, { useTheme, type ThemeProviderProps } from './theme-provider';
+import ThemeProvider, { type ThemeProviderProps } from './theme-provider';
+import LoadingFullscreenProvider from './loading-fullscreen-provider';
+import { useIsMounted, useTheme } from '../../hooks';
 
 export type UIComponentThemeConfig = AntdThemeConfig['components'];
 export type UIComponentGlobalConfig = AntdThemeConfig['token'];
@@ -21,6 +24,7 @@ type UIProviderBaseProps = React.PropsWithChildren<{
   globalTokenConfig?: UIComponentGlobalConfig;
   componentThemeConfig?: UIComponentThemeConfig;
   feedbakcConfig?: FeedbackConfig;
+  initialContent?: React.ReactNode;
 }>;
 
 type ThemeProviderOptions = Omit<ThemeProviderProps, 'children'>;
@@ -34,24 +38,48 @@ function UIProviderBody({
   framework = 'nextjs',
   globalTokenConfig,
   componentThemeConfig,
-  feedbakcConfig
+  feedbakcConfig,
+  initialContent = null
 }: UIProviderBaseProps) {
   const { theme, resolvedTheme } = useTheme();
+  const isMounted = useIsMounted();
   const activeTheme = (theme === 'system' ? resolvedTheme : theme) ?? 'light';
-  const content = (
+
+  const contentWithProviders = (
     <AntdConfigProvider
-      wave={{ disabled: false }}
+      wave={{ disabled: true }}
       theme={{
-        token: { ...globalTokenConfig },
-        components: { ...componentThemeConfig },
-        algorithm: activeTheme === 'dark' ? AntdTheme.darkAlgorithm : AntdTheme.defaultAlgorithm
+        token: { fontFamily: 'inherit', ...globalTokenConfig },
+        components: {
+          ...componentThemeConfig,
+          Typography: {
+            fontSizeHeading5: 18,
+            titleMarginBottom: '0',
+            titleMarginTop: '0',
+            ...componentThemeConfig?.Typography
+          },
+          Spin: {
+            colorBgMask: '#202121A8',
+            ...componentThemeConfig?.Spin
+          },
+          Divider: {
+            marginLG: 12,
+            ...componentThemeConfig?.Divider
+          }
+        },
+        algorithm: activeTheme === 'light' ? AntdTheme.defaultAlgorithm : AntdTheme.darkAlgorithm
       }}
     >
-      <AntdFeedback {...feedbakcConfig}>{children}</AntdFeedback>
+      <LoadingFullscreenProvider>
+        <AntdFeedback {...feedbakcConfig}>{children}</AntdFeedback>;
+      </LoadingFullscreenProvider>
     </AntdConfigProvider>
   );
 
-  return framework === 'nextjs' ? <AntdRegistry>{content}</AntdRegistry> : content;
+  const renderedContent =
+    framework === 'nextjs' ? <AntdRegistry>{contentWithProviders}</AntdRegistry> : contentWithProviders;
+
+  return isMounted ? renderedContent : initialContent;
 }
 
 function UIProviderCompose({ themeProviderProps, ...props }: UIProviderProps) {
@@ -61,7 +89,6 @@ function UIProviderCompose({ themeProviderProps, ...props }: UIProviderProps) {
     disableTransitionOnChange = true,
     ...restThemeProviderProps
   } = themeProviderProps ?? {};
-
   return (
     <ThemeProvider
       defaultTheme={defaultTheme}
@@ -73,8 +100,6 @@ function UIProviderCompose({ themeProviderProps, ...props }: UIProviderProps) {
     </ThemeProvider>
   );
 }
-
-export const useFeeback = AntdFeedback.useApp;
 
 export default function UIProvider(props: UIProviderProps) {
   return <UIProviderCompose {...props} />;

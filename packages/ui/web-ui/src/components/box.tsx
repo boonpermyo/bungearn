@@ -1,8 +1,8 @@
 'use client';
 
 import React from 'react';
-import { theme } from 'antd';
 import { cn } from '../utils/cn';
+import { useToken } from '../hooks';
 
 export type BoxVariant = 'page-content' | 'plain';
 export type BoxProps = React.ComponentProps<'div'> & {
@@ -23,7 +23,7 @@ export default function Box({
   disabledThemeSync = false,
   ...props
 }: BoxProps) {
-  const { token } = theme.useToken();
+  const { token } = useToken();
   return (
     <div
       className={cn(mapVariantBox[variant ?? 'page-content'], className)}
