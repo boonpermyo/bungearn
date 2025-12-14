@@ -3,6 +3,7 @@ export * from './entities/user/user-entity';
 export * from './entities/user-role/user-role-entity';
 export * from './entities/user-role/user-role-constants';
 export * from './entities/user-gender/user-gender-entity';
+export * from './entities/user-gender/user-gender-constants';
 export * from './entities/user-connection/user-connection-entity';
 export * from './entities/conversation/conversation-entity';
 export * from './entities/conversation-participant/conversation-participant-entity';

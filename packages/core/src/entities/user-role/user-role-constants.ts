@@ -6,6 +6,6 @@ export const USER_ROLE = Object.freeze({
   SuperAdmin: 'SUPER_ADMIN',
   Admin: 'ADMIN',
   Root: 'ROOT'
-});
+} satisfies Record<string, UserRoleName>);
 
 export const USER_ROLES: ReadonlyArray<UserRoleName> = Object.freeze(Object.values(USER_ROLE));

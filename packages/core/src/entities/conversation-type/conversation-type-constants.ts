@@ -4,7 +4,7 @@ export const CONVERSATION_TYPE = Object.freeze({
   DirectMessage: 'DIRECT_MESSAGE',
   PrivateGroupMessage: 'PRIVATE_GROUP_MESSAGE',
   PublicGroupMessage: 'PUBLIC_GROUP_MESSAGE'
-});
+} satisfies Record<string, ConversationTypeName>);
 
 export const CONVERSATION_TYPES: ReadonlyArray<ConversationTypeName> = Object.freeze(
   Object.values(CONVERSATION_TYPE)
