@@ -1,6 +1,6 @@
 'use client';
 
-import { Button, Modal, UploadInput } from '@whispa/web-ui/components';
+import { Avatar, Button, Modal, UploadInput } from '@whispa/web-ui/components';
 import { useFeedback, useModalState, useTheme } from '@whispa/web-ui/hooks';
 import Image from 'next/image';
 import { useState } from 'react';
@@ -55,6 +55,15 @@ export default function Home() {
       </Modal>
       <h1>sdfsfasfasd</h1>
       {file && <Image src={file} alt="sdfsdfsdf" width={1000} height={1000} />}
+      <Avatar
+        badge={{
+          dot: true,
+          // placement: 'topLeft',
+          // offset: [-6, 6],
+          color: 'green'
+          // style: { width: 12, height: 12, minWidth: 12 }
+        }}
+      />
     </div>
   );
 }

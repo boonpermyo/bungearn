@@ -75,6 +75,9 @@ export { default as Box } from './box';
 export * from './avatar';
 export { default as Avatar } from './avatar';
 
+export * from './badge';
+export { default as Badge } from './badge';
+
 export * from './button';
 export { default as Button } from './button';
 
