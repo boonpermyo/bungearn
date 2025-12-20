@@ -1,2 +1,2 @@
-import prettierConfig from "@whisper-loop/prettier-config";
+import prettierConfig from "@whispa/prettier-config";
 export default prettierConfig;

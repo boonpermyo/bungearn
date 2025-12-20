@@ -1,2 +1,2 @@
-import baseConfig from '@whisper-loop/eslint-config';
+import baseConfig from '@whispa/eslint-config';
 export default baseConfig;

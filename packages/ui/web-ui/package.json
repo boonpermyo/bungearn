@@ -1,5 +1,5 @@
 {
-  "name": "@whisper-loop/web-ui",
+  "name": "@whispa/web-ui",
   "author": "Boonperm Yo by sdsarun",
   "version": "1.0.0",
   "private": true,
@@ -46,7 +46,7 @@
     "@storybook/addon-vitest": "^10.0.2",
     "@storybook/react-vite": "^10.0.2",
     "@vitest/browser-playwright": "^4.0.6",
-    "@whisper-loop/typescript-config": "^1.0.0",
+    "@whispa/typescript-config": "^1.0.0",
     "eslint-plugin-storybook": "^10.0.2",
     "playwright": "^1.56.1",
     "storybook": "^10.0.2",

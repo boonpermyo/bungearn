@@ -1,5 +1,5 @@
 {
-  "name": "@whisper-loop/web",
+  "name": "@whispa/web",
   "version": "1.0.0",
   "private": true,
   "type": "module",
@@ -11,9 +11,9 @@
     "format": "prettier --write ."
   },
   "dependencies": {
-    "@whisper-loop/core": "^1.0.0",
-    "@whisper-loop/utils": "^1.0.0",
-    "@whisper-loop/web-ui": "^1.0.0",
+    "@whispa/core": "^1.0.0",
+    "@whispa/utils": "^1.0.0",
+    "@whispa/web-ui": "^1.0.0",
     "next": "^16.0.10",
     "react": "^19.2.3",
     "react-dom": "^19.2.3"

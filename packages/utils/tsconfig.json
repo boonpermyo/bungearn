@@ -1,3 +1,3 @@
 {
-  "extends": "@whisper-loop/typescript-config",
+  "extends": "@whispa/typescript-config",
 }

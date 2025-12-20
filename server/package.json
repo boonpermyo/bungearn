@@ -1,5 +1,5 @@
 {
-  "name": "@whisper-loop/server",
+  "name": "@whispa/server",
   "author": "Boonperm Yo by sdsarun",
   "version": "1.0.0",
   "private": true,
@@ -11,11 +11,11 @@
   },
   "type": "module",
   "dependencies": {
-    "@whisper-loop/core": "^1.0.0",
+    "@whispa/core": "^1.0.0",
     "fastify": "^5.6.1"
   },
   "devDependencies": {
-    "@whisper-loop/typescript-config": "^1.0.0",
+    "@whispa/typescript-config": "^1.0.0",
     "tsx": "^4.20.6"
   }
 }

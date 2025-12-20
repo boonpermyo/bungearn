@@ -1,9 +1,9 @@
 import './globals.css';
 
 import type { Metadata, Viewport } from 'next';
-import { UIProvider } from '@whisper-loop/web-ui/components';
+import { UIProvider } from '@whispa/web-ui/components';
 import { Noto_Sans, Noto_Sans_Mono } from 'next/font/google';
-import { cn } from '@whisper-loop/web-ui/utils';
+import { cn } from '@whispa/web-ui/utils';
 import uiConfig from '@/configs/ui';
 
 const notoSans = Noto_Sans({

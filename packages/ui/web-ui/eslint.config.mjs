@@ -1,4 +1,4 @@
-import baseConfig from '@whisper-loop/eslint-config';
+import baseConfig from '@whispa/eslint-config';
 import storybookConfig from 'eslint-plugin-storybook';
 import { defineConfig } from 'eslint/config';
 
