@@ -72,11 +72,14 @@ export { default as UploadInput } from './form/inputs/upload';
 export * from './box';
 export { default as Box } from './box';
 
+export * from './avatar';
+export { default as Avatar } from './avatar';
+
 export * from './button';
 export { default as Button } from './button';
 
-export * from './date-picker-th';
-export { default as DatePickerTH } from './date-picker-th';
+export * from './drawer';
+export { default as Drawer } from './drawer';
 
 export * from './modal';
 export { default as Modal } from './modal';
@@ -95,3 +98,6 @@ export { default as Text } from './typography/text';
 
 export * from './typography/link';
 export { default as Link } from './typography/link';
+
+export * from './skeleton';
+export { default as Skeleton } from './skeleton';
