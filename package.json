@@ -6,6 +6,7 @@
   "scripts": {
     "dev:web": "npm run build:packages && npm run dev -w @whispa/web",
     "storybook:web-ui": "npm run storybook -w @whispa/web-ui",
+    "storybook": "npm run storybook:web-ui",
     "build:web": "npm run build:packages && npm run build -w @whispa/web --if-present",
     "build:core": "npm run build -w @whispa/core --if-present",
     "build:web-ui": "npm run build -w @whispa/web-ui --if-present",

@@ -48,14 +48,17 @@ function UIProviderBody({
   const contentWithProviders = (
     <AntdConfigProvider
       wave={{ disabled: true }}
+      typography={{
+        style: { margin: 0 }
+      }}
       theme={{
         token: { fontFamily: 'inherit', ...globalTokenConfig },
         components: {
           ...componentThemeConfig,
           Typography: {
             fontSizeHeading5: 18,
-            titleMarginBottom: '0',
-            titleMarginTop: '0',
+            titleMarginBottom: 0,
+            titleMarginTop: 0,
             ...componentThemeConfig?.Typography
           },
           Spin: {

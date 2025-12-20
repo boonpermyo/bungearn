@@ -1,11 +1,12 @@
 'use client';
 
 import { Button, Modal, UploadInput } from '@whispa/web-ui/components';
-import { useFeedback, useModalState } from '@whispa/web-ui/hooks';
+import { useFeedback, useModalState, useTheme } from '@whispa/web-ui/hooks';
 import Image from 'next/image';
 import { useState } from 'react';
 
 export default function Home() {
+  const { setTheme } = useTheme();
   const [file, setFile] = useState<string | null>(null);
   const { modal } = useFeedback();
   const { isOpen, open, close } = useModalState();
@@ -30,6 +31,8 @@ export default function Home() {
       >
         <Button>Upload</Button>
       </UploadInput>
+      <Button onClick={() => setTheme('light')}>Light</Button>
+      <Button onClick={() => setTheme('dark')}>Dark</Button>
       <Button
         onClick={async () => {
           const confirm = await modal.confirm({
@@ -40,7 +43,14 @@ export default function Home() {
       >
         Modal
       </Button>
-      <Modal className="" open={isOpen} onCancel={close}>
+      <Button
+        onClick={async () => {
+          open({});
+        }}
+      >
+        open modal
+      </Button>
+      <Modal className="" open={isOpen} onOk={close} onCancel={close}>
         <h1>sodfijaosdfjaopsdjfi</h1>
       </Modal>
       <h1>sdfsfasfasd</h1>
