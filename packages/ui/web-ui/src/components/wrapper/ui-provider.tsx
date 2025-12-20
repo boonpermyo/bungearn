@@ -71,7 +71,7 @@ function UIProviderBody({
       }}
     >
       <LoadingFullscreenProvider>
-        <AntdFeedback {...feedbakcConfig}>{children}</AntdFeedback>;
+        <AntdFeedback {...feedbakcConfig}>{children}</AntdFeedback>
       </LoadingFullscreenProvider>
     </AntdConfigProvider>
   );
