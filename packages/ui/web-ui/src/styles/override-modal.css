@@ -7,7 +7,7 @@
 .whispa-overlay-enter-active,
 .whispa-overlay-appear-active {
   opacity: 1;
-  transition: opacity 200ms ease-out;
+  transition: opacity 100ms ease-out;
 }
 
 .whispa-overlay-leave {
@@ -16,7 +16,7 @@
 
 .whispa-overlay-leave-active {
   opacity: 0;
-  transition: opacity 200ms ease-in;
+  transition: opacity 100ms ease-in;
 }
 
 /* ===== Dialog panel ===== */
@@ -31,7 +31,7 @@
 .whispa-dialog-appear-active {
   opacity: 1;
   transform: scale(1);
-  transition: opacity 200ms ease-out, transform 200ms ease-out;
+  transition: opacity 100ms ease-out, transform 100ms ease-out;
   /* whispa duration-200 */
 }
 
@@ -44,7 +44,7 @@
   opacity: 0;
   transform: scale(0.95);
   /* whispa zoom-out-95 */
-  transition: opacity 200ms ease-in, transform 200ms ease-in;
+  transition: opacity 100ms ease-in, transform 100ms ease-in;
 }
 
 /* ===== Respect "reduce motion" user setting ===== */
