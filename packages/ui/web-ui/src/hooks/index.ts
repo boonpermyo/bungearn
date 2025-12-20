@@ -12,3 +12,6 @@ export { default as useTheme } from './use-theme';
 
 export * from './use-unmount';
 export { default as useUnmount } from './use-unmount';
+
+export * from './use-modal-state';
+export { default as useModalState } from './use-modal-state';
