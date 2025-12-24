@@ -1,5 +1,5 @@
 {
-  "extends": "@whisper-loop/typescript-config",
+  "extends": "@whispa/typescript-config",
   "compilerOptions": {
     "moduleResolution": "bundler"
   },

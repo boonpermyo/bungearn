@@ -1,6 +1,6 @@
 'use client';
 
-// import '@ant-design/v5-patch-for-react-19';
+import '@ant-design/v5-patch-for-react-19';
 
 import type React from 'react';
 import {
@@ -48,14 +48,17 @@ function UIProviderBody({
   const contentWithProviders = (
     <AntdConfigProvider
       wave={{ disabled: true }}
+      typography={{
+        style: { margin: 0 }
+      }}
       theme={{
         token: { fontFamily: 'inherit', ...globalTokenConfig },
         components: {
           ...componentThemeConfig,
           Typography: {
             fontSizeHeading5: 18,
-            titleMarginBottom: '0',
-            titleMarginTop: '0',
+            titleMarginBottom: 0,
+            titleMarginTop: 0,
             ...componentThemeConfig?.Typography
           },
           Spin: {
@@ -71,7 +74,7 @@ function UIProviderBody({
       }}
     >
       <LoadingFullscreenProvider>
-        <AntdFeedback {...feedbakcConfig}>{children}</AntdFeedback>;
+        <AntdFeedback {...feedbakcConfig}>{children}</AntdFeedback>
       </LoadingFullscreenProvider>
     </AntdConfigProvider>
   );

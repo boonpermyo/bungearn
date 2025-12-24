@@ -1,11 +1,11 @@
 {
-  "name": "@whisper-loop/web-ui",
+  "name": "@whispa/web-ui",
   "author": "Boonperm Yo by sdsarun",
   "version": "1.0.0",
   "private": true,
   "scripts": {
     "format": "prettier --write .",
-    "build": "rimraf dist && tsc -p tsconfig.build.json",
+    "build": "rimraf dist && tsc -p tsconfig.build.json && cpy \"src/styles/**/*\" dist/styles",
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
@@ -26,6 +26,10 @@
       "import": "./dist/hooks/index.js",
       "types": "./dist/hooks/index.d.ts",
       "default": "./dist/hooks/index.js"
+    },
+    "./styles": {
+      "import": "./dist/styles/index.css",
+      "default": "./dist/styles/index.css"
     }
   },
   "dependencies": {
@@ -46,7 +50,8 @@
     "@storybook/addon-vitest": "^10.0.2",
     "@storybook/react-vite": "^10.0.2",
     "@vitest/browser-playwright": "^4.0.6",
-    "@whisper-loop/typescript-config": "^1.0.0",
+    "@whispa/typescript-config": "^1.0.0",
+    "cpy-cli": "^6.0.0",
     "eslint-plugin-storybook": "^10.0.2",
     "playwright": "^1.56.1",
     "storybook": "^10.0.2",

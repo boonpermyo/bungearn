@@ -1,14 +1,11 @@
 'use client';
 
-import React from 'react';
 import { type ControllerRenderProps } from 'react-hook-form';
 import useFormField from '../fields/use-form-field';
 import { dayjs } from '../../../utils/dayjs';
-import DatePickerTH from '../../date-picker-th';
+import { RangePickerBase } from '../../base/date-picker-base';
 
-const { RangePicker: AntdRangePicker } = DatePickerTH;
-
-export type RangeDatePickerInputProps = React.ComponentPropsWithRef<typeof AntdRangePicker> & {
+export type RangeDatePickerInputProps = React.ComponentProps<typeof RangePickerBase> & {
   controlField?: ControllerRenderProps<any, any>;
 };
 
@@ -47,7 +44,7 @@ export default function RangeDatePickerInput({
   const validValue = validateDateRangeValue(value ?? controlField?.value);
 
   return (
-    <AntdRangePicker
+    <RangePickerBase
       id={id ?? formItemId}
       status={(status ?? invalid) ? 'error' : undefined}
       ref={ref ?? controlField?.ref}
