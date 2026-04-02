@@ -1,5 +1,5 @@
 {
-  "name": "@whisper-loop/eslint-config",
+  "name": "@whispa/eslint-config",
   "author": "Boonperm Yo by sdsarun",
   "private": true,
   "version": "1.0.0",
@@ -23,5 +23,10 @@
     "eslint-plugin-react-hooks": "^7.0.1",
     "globals": "^14.0.0",
     "typescript-eslint": "^8.46.2"
+  },
+  "dependencies": {
+    "@whispa/web-ui": "^1.0.0",
+    "antd": "^6.1.1",
+    "lucide-react": "^0.562.0"
   }
 }

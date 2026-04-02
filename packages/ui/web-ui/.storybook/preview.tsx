@@ -1,4 +1,6 @@
 import type { Preview } from '@storybook/react-vite';
+import 'antd/dist/reset.css';
+import '../src/styles/index.css';
 import { UIProvider } from '../src';
 
 const preview: Preview = {

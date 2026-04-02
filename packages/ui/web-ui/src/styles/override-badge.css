@@ -1,0 +1,29 @@
+.whispa-badge-topRight .ant-badge-count,
+.whispa-badge-topRight .ant-badge-dot {
+  inset-inline-end: 0;
+  inset-block-start: 0;
+  transform: translate(50%, -50%);
+}
+
+.whispa-badge-topLeft .ant-badge-count,
+.whispa-badge-topLeft .ant-badge-dot {
+  inset-inline-start: 0;
+  inset-block-start: 0;
+  transform: translate(-50%, -50%);
+}
+
+.whispa-badge-bottomRight .ant-badge-count,
+.whispa-badge-bottomRight .ant-badge-dot {
+  inset-block-start: auto;
+  inset-inline-end: 0;
+  inset-block-end: 0;
+  transform: translate(50%, 50%);
+}
+
+.whispa-badge-bottomLeft .ant-badge-count,
+.whispa-badge-bottomLeft .ant-badge-dot {
+  inset-block-start: auto;
+  inset-inline-start: 0;
+  inset-block-end: 0;
+  transform: translate(-50%, 50%);
+}

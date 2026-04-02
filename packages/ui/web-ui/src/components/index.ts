@@ -1,6 +1,9 @@
 export * from './wrapper/ui-provider';
 export * from './wrapper/theme-provider';
 export * from './wrapper/loading-fullscreen-provider';
+export * from './icons';
+export * from './typography';
+
 export { default as UIProvider } from './wrapper/ui-provider';
 
 export * from './form/form';
@@ -72,14 +75,23 @@ export { default as UploadInput } from './form/inputs/upload';
 export * from './box';
 export { default as Box } from './box';
 
+export * from './avatar';
+export { default as Avatar } from './avatar';
+
+export * from './badge';
+export { default as Badge } from './badge';
+
 export * from './button';
 export { default as Button } from './button';
 
-export * from './date-picker-th';
-export { default as DatePickerTH } from './date-picker-th';
+export * from './drawer';
+export { default as Drawer } from './drawer';
 
 export * from './modal';
 export { default as Modal } from './modal';
 
 export * from './loading';
 export { default as Loading } from './loading';
+
+export * from './skeleton';
+export { default as Skeleton } from './skeleton';

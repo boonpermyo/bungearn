@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import Button from '../button';
-import { useTheme } from '../wrapper/theme-provider';
 import Box from '../box';
+import useTheme from '../../hooks/use-theme';
 
 const meta = {
   title: 'Examples/DarkMode'

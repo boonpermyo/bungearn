@@ -1,15 +1,9 @@
-'use client';
-
-import type { Dayjs } from 'dayjs';
-import React from 'react';
+import { dayjs } from '../../../utils/dayjs';
 import { type ControllerRenderProps } from 'react-hook-form';
 import useFormField from '../fields/use-form-field';
-import { dayjs } from '../../../utils/dayjs';
-import DatePickerTH from '../../date-picker-th';
+import DatePickerBase from '../../base/date-picker-base';
 
-export type DatePickerInputProps<ValueType = Dayjs> = React.ComponentPropsWithRef<
-  typeof DatePickerTH<ValueType>
-> & {
+export type DatePickerInputProps = React.ComponentProps<typeof DatePickerBase> & {
   controlField?: ControllerRenderProps<any, any>;
 };
 
@@ -20,7 +14,7 @@ export const validateDatePickerValue = (date?: DatePickerValue): DatePickerValue
     return undefined;
   }
 
-  const validDayjs = dayjs(date);
+  const validDayjs = dayjs(date as Parameters<typeof dayjs>[0]);
   return validDayjs.isValid() ? validDayjs : undefined;
 };
 
@@ -42,7 +36,7 @@ export default function DatePickerInput({
   const validValue = validateDatePickerValue(value ?? controlField?.value);
 
   return (
-    <DatePickerTH
+    <DatePickerBase
       id={id ?? formItemId}
       status={(status ?? invalid) ? 'error' : undefined}
       ref={ref ?? controlField?.ref}

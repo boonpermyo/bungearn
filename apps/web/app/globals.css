@@ -1,10 +1,64 @@
 @import 'tailwindcss';
+@import '@whispa/web-ui/styles';
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+:root {
+  --whispa-primary: #9333ea;
+  --whispa-info: #3b82f6;
+  --whispa-success: #22c55e;
+  --whispa-warning: #eab308;
+  --whispa-error: #ef4444;
+  --whispa-link: #7c3aed;
+  --whispa-link-hover: #6d28d9;
+  --whispa-link-active: #5b21b6;
+}
+
+[data-theme='dark'] {
+  --whispa-primary: #a78bfa;
+  --whispa-info: #93c5fd;
+  --whispa-success: #4ade80;
+  --whispa-warning: #facc15;
+  --whispa-error: #f87171;
+  --whispa-link: #a78bfa;
+  --whispa-link-hover: #c4b5fd;
+  --whispa-link-active: #ddd6fe;
+}
+
+/* Bridge Ant Design cssVar tokens (prefix whispa) to our theme vars */
+:root {
+  --whispa-colorPrimary: var(--whispa-primary);
+  --whispa-colorInfo: var(--whispa-info);
+  --whispa-colorSuccess: var(--whispa-success);
+  --whispa-colorWarning: var(--whispa-warning);
+  --whispa-colorError: var(--whispa-error);
+  --whispa-colorLink: var(--whispa-link);
+  --whispa-colorLinkHover: var(--whispa-link-hover);
+  --whispa-colorLinkActive: var(--whispa-link-active);
+}
+
+[data-theme='dark'] {
+  --whispa-colorPrimary: var(--whispa-primary);
+  --whispa-colorInfo: var(--whispa-info);
+  --whispa-colorSuccess: var(--whispa-success);
+  --whispa-colorWarning: var(--whispa-warning);
+  --whispa-colorError: var(--whispa-error);
+  --whispa-colorLink: var(--whispa-link);
+  --whispa-colorLinkHover: var(--whispa-link-hover);
+  --whispa-colorLinkActive: var(--whispa-link-active);
+}
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-noto-sans);
   --font-mono: var(--font-noto-mono);
+  --color-primary: var(--whispa-primary);
+  --color-info: var(--whispa-info);
+  --color-success: var(--whispa-success);
+  --color-warning: var(--whispa-warning);
+  --color-error: var(--whispa-error);
+  --color-link: var(--whispa-link);
+  --color-link-hover: var(--whispa-link-hover);
+  --color-link-active: var(--whispa-link-active);
 }

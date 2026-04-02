@@ -1,0 +1,61 @@
+/* ===== Overlay (mask) ===== */
+.whispa-overlay-enter,
+.whispa-overlay-appear {
+  opacity: 0;
+}
+
+.whispa-overlay-enter-active,
+.whispa-overlay-appear-active {
+  opacity: 1;
+  transition: opacity 100ms ease-out;
+}
+
+.whispa-overlay-leave {
+  opacity: 1;
+}
+
+.whispa-overlay-leave-active {
+  opacity: 0;
+  transition: opacity 100ms ease-in;
+}
+
+/* ===== Dialog panel ===== */
+.whispa-dialog-enter,
+.whispa-dialog-appear {
+  opacity: 0;
+  transform: scale(0.95);
+  /* whispa zoom-in-95 */
+}
+
+.whispa-dialog-enter-active,
+.whispa-dialog-appear-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 100ms ease-out, transform 100ms ease-out;
+  /* whispa duration-200 */
+}
+
+.whispa-dialog-leave {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.whispa-dialog-leave-active {
+  opacity: 0;
+  transform: scale(0.95);
+  /* whispa zoom-out-95 */
+  transition: opacity 100ms ease-in, transform 100ms ease-in;
+}
+
+/* ===== Respect "reduce motion" user setting ===== */
+@media (prefers-reduced-motion: reduce) {
+
+  .whispa-overlay-enter-active,
+  .whispa-overlay-appear-active,
+  .whispa-overlay-leave-active,
+  .whispa-dialog-enter-active,
+  .whispa-dialog-appear-active,
+  .whispa-dialog-leave-active {
+    transition: none;
+  }
+}

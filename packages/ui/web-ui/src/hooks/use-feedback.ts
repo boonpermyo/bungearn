@@ -89,11 +89,61 @@ const createMessageController = (controller: AntdMessageController): UIMessageCo
 });
 
 const createModalController = (controller: AntdModalController): UIModalController => ({
-  info: (options) => controller.info(options),
-  success: (options) => controller.success(options),
-  error: (options) => controller.error(options),
-  warning: (options) => controller.warning(options),
-  confirm: (options) => controller.confirm(options)
+  info: ({ mousePosition, ...options }) =>
+    controller.info({
+      transitionName: 'whispa-dialog',
+      maskTransitionName: 'whispa-overlay',
+      mousePosition: {
+        x: 0,
+        y: 0,
+        ...mousePosition
+      },
+      ...options
+    }),
+  success: ({ mousePosition, ...options }) =>
+    controller.success({
+      transitionName: 'whispa-dialog',
+      maskTransitionName: 'whispa-overlay',
+      mousePosition: {
+        x: 0,
+        y: 0,
+        ...mousePosition
+      },
+      ...options
+    }),
+  error: ({ mousePosition, ...options }) =>
+    controller.error({
+      transitionName: 'whispa-dialog',
+      maskTransitionName: 'whispa-overlay',
+      mousePosition: {
+        x: 0,
+        y: 0,
+        ...mousePosition
+      },
+      ...options
+    }),
+  warning: ({ mousePosition, ...options }) =>
+    controller.warning({
+      transitionName: 'whispa-dialog',
+      maskTransitionName: 'whispa-overlay',
+      mousePosition: {
+        x: 0,
+        y: 0,
+        ...mousePosition
+      },
+      ...options
+    }),
+  confirm: ({ mousePosition, ...options }) =>
+    controller.confirm({
+      transitionName: 'whispa-dialog',
+      maskTransitionName: 'whispa-overlay',
+      mousePosition: {
+        x: 0,
+        y: 0,
+        ...mousePosition
+      },
+      ...options
+    })
 });
 
 const createNotificationController = (
