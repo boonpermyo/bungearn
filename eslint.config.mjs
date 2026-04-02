@@ -1,2 +1,2 @@
 import baseConfig from '@whispa/eslint-config';
-export default baseConfig;
+export default [{ ignores: ['apps/backend/**'] }, ...baseConfig];
