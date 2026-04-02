@@ -1,0 +1,11 @@
+{
+  "name": "@whispa/backend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "air",
+    "start": "./dist/main",
+    "build": "go build -o dist/main ."
+  },
+  "license": "ISC"
+}
