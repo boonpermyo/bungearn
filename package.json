@@ -33,12 +33,12 @@
   "workspaces": [
     "apps/**",
     "packages/**",
-    "configs/**",
-    "server"
+    "configs/**"
   ],
   "devDependencies": {
     "@types/node": "^20",
     "@whispa/eslint-config": "^1.0.0",
+    "turbo": "^2.9.3",
     "typescript": "^5"
   }
 }

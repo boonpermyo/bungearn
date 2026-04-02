@@ -1,7 +1,11 @@
-node_modules/
+# files
 .DS_Store
 *.pem
-dist/
 *storybook.log
 storybook-static
+
+# folders
+node_modules/
 whispa/
+tmp/
+dist/
