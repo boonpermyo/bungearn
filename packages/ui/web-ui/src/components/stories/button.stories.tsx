@@ -33,6 +33,9 @@ export const Gradient: Story = {
       >
         Custom gradient
       </Button>
+      <Button type="gradient" gradient="gray">
+        Gray gradient
+      </Button>
     </div>
   )
 };

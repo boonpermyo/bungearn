@@ -12,7 +12,10 @@
   "type": "module",
   "dependencies": {
     "@whispa/core": "^1.0.0",
-    "fastify": "^5.6.1"
+    "@whispa/web-ui": "^1.0.0",
+    "antd": "^6.1.1",
+    "fastify": "^5.6.1",
+    "lucide-react": "^0.562.0"
   },
   "devDependencies": {
     "@whispa/typescript-config": "^1.0.0",

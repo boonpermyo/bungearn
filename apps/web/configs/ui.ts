@@ -5,12 +5,12 @@ const uiConfig: Readonly<UIProviderProps> = {
     borderRadius: 8,
     fontSize: 14,
 
-    // Brand Colors (Matching Tailwind tokens)
-    colorPrimary: '#9333ea', // Purple 600
-    colorInfo: '#3b82f6', // Blue 500
-    colorSuccess: '#22c55e', // Green 500
-    colorWarning: '#eab308', // Yellow 500
-    colorError: '#ef4444', // Red 500
+    // Brand Colors (fixed values; CSS overrides handle dynamic theming)
+    colorPrimary: '#9333ea',
+    colorInfo: '#3b82f6',
+    colorSuccess: '#22c55e',
+    colorWarning: '#eab308',
+    colorError: '#ef4444',
 
     // Neutrals
     // colorTextBase: '#111827', // Gray 900
@@ -26,12 +26,8 @@ const uiConfig: Readonly<UIProviderProps> = {
     // Spacing & Shapes
     borderRadiusLG: 12, // Large radius
     borderRadiusSM: 4, // Small radius
-    wireframe: false,
-
-    // Transitions
-    motionUnit: 0.1
-  },
-  componentThemeConfig: {}
+    wireframe: false
+  }
 };
 
 export default uiConfig;

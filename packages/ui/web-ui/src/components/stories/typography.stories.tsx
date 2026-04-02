@@ -1,15 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import Title from '../typography/title';
-import Paragraph from '../typography/paragraph';
-import Text from '../typography/text';
-import Link from '../typography/link';
+import Typography from '../typography';
+
+const { Title, Paragraph, Text, Link } = Typography;
 
 const meta = {
-  title: 'Components/Typography'
-} satisfies Meta;
+  title: 'Components/Typography',
+  component: Typography
+} satisfies Meta<typeof Typography>;
 
 export default meta;
-type Story = StoryObj;
+type Story = StoryObj<typeof Typography>;
 
 export const TitleLevels: Story = {
   render: () => (

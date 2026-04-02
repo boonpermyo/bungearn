@@ -52,6 +52,7 @@ function UIProviderBody({
         style: { margin: 0 }
       }}
       theme={{
+        cssVar: { prefix: 'whispa' },
         token: { fontFamily: 'inherit', ...globalTokenConfig },
         components: {
           ...componentThemeConfig,

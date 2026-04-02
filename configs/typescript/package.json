@@ -13,5 +13,10 @@
   ],
   "devDependencies": {
     "typescript": "^5"
+  },
+  "dependencies": {
+    "@whispa/web-ui": "^1.0.0",
+    "antd": "^6.1.1",
+    "lucide-react": "^0.562.0"
   }
 }

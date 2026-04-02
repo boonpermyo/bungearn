@@ -1,6 +1,9 @@
 export * from './wrapper/ui-provider';
 export * from './wrapper/theme-provider';
 export * from './wrapper/loading-fullscreen-provider';
+export * from './icons';
+export * from './typography';
+
 export { default as UIProvider } from './wrapper/ui-provider';
 
 export * from './form/form';
@@ -89,18 +92,6 @@ export { default as Modal } from './modal';
 
 export * from './loading';
 export { default as Loading } from './loading';
-
-export * from './typography/title';
-export { default as Title } from './typography/title';
-
-export * from './typography/paragraph';
-export { default as Paragraph } from './typography/paragraph';
-
-export * from './typography/text';
-export { default as Text } from './typography/text';
-
-export * from './typography/link';
-export { default as Link } from './typography/link';
 
 export * from './skeleton';
 export { default as Skeleton } from './skeleton';
